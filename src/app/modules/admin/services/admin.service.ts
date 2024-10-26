@@ -75,6 +75,13 @@ postCarFix(carFixId:number,paymentCarFixDto:any):Observable<any>{
   return this.http.post(BASIC_URL + `/api/admin/payment/${carFixId}`,paymentCarFixDto,{headers:this.createAuthorizationHeader()});
 }
 
+postContract(contractDto:any,carId:number):Observable<any>{
+  return this.http.post(BASIC_URL + `/api/admin/contract/${carId}`,contractDto,{headers:this.createAuthorizationHeader()});
+}
+
+getAllContract():Observable<any>{
+  return this.http.get(BASIC_URL + "/api/admin/contract/list",{headers:this.createAuthorizationHeader()});
+}
 
   createAuthorizationHeader():HttpHeaders{
     let authHeaders : HttpHeaders = new HttpHeaders();

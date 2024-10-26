@@ -37,7 +37,6 @@ export class CarDetailsComponent implements OnInit {
       // this.getAllCar();
       this.cars = res;
       this.cars.processedImg = 'data:image/jpeg;base64,' + this.cars.returnedImage;
-
     }))
   }
 

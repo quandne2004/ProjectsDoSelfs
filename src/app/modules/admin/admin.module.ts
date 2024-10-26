@@ -25,6 +25,8 @@ import { GetALlCommentComponent } from './component/get-all-comment/get-all-comm
 import { CarStatusComponent } from './component/car-status/car-status.component';
 import { CarFixComponent } from './component/car-fix/car-fix.component';
 import { ShowPaymentComponent } from './component/show-payment/show-payment.component';
+import { ContractComponent } from './component/contract/contract.component';
+import { PostContractComponent } from './component/post-contract/post-contract.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ShowPaymentComponent } from './component/show-payment/show-payment.comp
     GetALlCommentComponent,
     CarStatusComponent,
     CarFixComponent,
-    ShowPaymentComponent
+    ShowPaymentComponent,
+    ContractComponent,
+    PostContractComponent
   ],
   imports: [
     CommonModule,
