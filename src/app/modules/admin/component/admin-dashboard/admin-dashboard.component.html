@@ -1,0 +1,40 @@
+<!-- <div style="background-color: white; min-height: 91vh;">
+<div style="padding-top: 10px;"></div>
+
+<div style="margin-top: 10px;" class="child" *ngFor="let car of cars">
+<div nz-row>
+    <div nz-col nzSpan="8">
+        <img class="profile" style="height: 200px; width: 200px; border-radius: 10px;" [src]="car.processedImg" alt="profile">
+    </div>
+    <div nz-col nzSpan="16">
+        <h2 style="cursor: pointer; color: #108ee9;">
+        {{car.brand}} - {{car.name}}</h2>
+        <p>{{car.description}}</p>
+        <hr/>
+        <h5>Price: <b>${{car.price}}</b> - Color: <b>{{car.color}}</b> - Transmission: <b>{{car.transmission}}</b> - Type:<b>{{car.type}}</b> - Year: <b>{{car.year | date: 'yyyy'}}</b>
+        </h5>
+        <hr>
+        <div style="float: right;">
+        <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" routerLink="/admin/cars/{{car.id}}">Update</button>
+        <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" (click)="deleteCar(car.id)" nzDanger>Delete</button>
+        </div>
+    </div>
+</div>
+</div>
+</div> -->
+
+
+<body>
+<div class="card" *ngFor="let car of cars">
+    <div class="imgBx">
+      <img [src]="car.processedImg" alt="">
+    </div>
+    <div class="contentBx">
+      <h3> {{car.brand}} <span>{{car.name}}</span></h3>
+      <p>{{car.color}} - {{car.transmission}}</p>
+      <h2 class="price">${{car.price}}<small></small></h2>
+      <a href="#" class="buy" routerLink="/admin/cars/{{car.id}}">Update</a>
+      <a href="#" class="buy" (click)="deleteCar(car.id)">Delete</a>
+    </div>
+  </div>
+</body>

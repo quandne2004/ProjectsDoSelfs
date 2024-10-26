@@ -1,0 +1,65 @@
+<!-- <div>
+  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
+    <div class="navbar-title">
+      <a routerLink="/login" >Car Rental Service</a>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Register</a>
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+
+    </div>
+  </nz-header>
+</div> -->
+<!-- <div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+<nav class="flex align-center">
+  <p><span>Car</span>Rental</p>
+  <ul>
+    <li class="big-screens">
+      <button class="btn register" routerLink="/register" routerLinkActive="active">Register</button>
+      <button class="btn login" routerLink="/login" routerLinkActive="active">Log In</button>
+    </li>
+    <li class="small-screens">
+      <i class="fa-solid fa-bars"></i>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+<div *ngIf="isAdminLoggedIn">
+<nav class="flex align-center">
+  <p><span>Car</span>Rental For Admin</p>
+  <ul>
+    <li class="big-screens">
+      <button class="btn register" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
+      <button class="btn register" routerLink="/admin/car" routerLinkActive="active">Car</button>
+      <button class="btn register" routerLink="/admin/bookings" routerLinkActive="active">Bookings</button>
+      <button class="btn register" routerLink="/admin/search" routerLinkActive="active">Search</button>      
+      <button class="btn login"  (click)="logout()"  routerLinkActive="active">Log out</button>
+    </li>
+    <li class="small-screens">
+      <i class="fa-solid fa-bars"></i>
+    </li>
+  </ul>
+</nav>
+</div>
+<div *ngIf="isCustomerLoggedIn">
+  <nav class="flex align-center">
+    <p><span>Car</span>Rental For User</p>
+    <ul>
+      <li class="big-screens">
+        <button class="btn register" routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
+        <button class="btn register" routerLink="/customer/my_bookings" routerLinkActive="active">My Bookings</button>
+        <button class="btn register" routerLink="/customer/cars/search" routerLinkActive="active">Search Car</button>
+        <button class="btn login" (click)="logout()" routerLinkActive="active">Log out</button>
+      </li>
+      <li class="small-screens">
+        <i class="fa-solid fa-bars"></i>
+      </li>
+    </ul>
+  </nav>
+  </div> -->
+
+  <app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

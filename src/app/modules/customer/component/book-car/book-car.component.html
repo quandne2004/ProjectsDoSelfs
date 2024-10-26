@@ -1,0 +1,75 @@
+<div *ngIf="car"  [style.background-image]="'url(' + processedImage + ')'" style="background-size: cover; min-height: 91vh; padding: 20px;" >
+    <div style="margin-top: 20px;" >
+        <div style="display: flex; gap: 20px; align-items: center; background: #C4DFE6;border-radius: 10px;">
+            <img class="profile" style="height: 150px; width: 250px; border-radius: 10px; object-fit: cover;" [src]="processedImage" alt="profile">
+            <div>
+                <h2 style="cursor: pointer; color: #108ee9; margin-bottom: 10px;">
+                    {{car.brand}} - {{car.name}}
+                </h2>
+                <p>{{car.description}}</p>
+                <hr/>
+                <h5>
+                    Price: <b>${{car.price}}</b> - Color: <b>{{car.color}}</b> - Transmission: <b>{{car.transmission}}</b> - Type: <b>{{car.type}}</b> - Year: <b>{{car.year | date: 'yyyy'}}</b>
+                </h5>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+
+  
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working..." style="margin-top: 30px;">
+        <form [formGroup]="postCarForm" style="margin-top: 20px;">
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1;">
+                    <nz-form-item>
+                        <nz-form-label nzFor="From Date" style="background-color: white;">From Date</nz-form-label>
+                        <nz-form-control>
+                            <nz-date-picker formControlName="fromDate" nzPlaceHolder="From Date" [nzFormat]="dateFormat" id="From Date" style="width: 100%;"></nz-date-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div style="flex: 1;">
+                    <nz-form-item>
+                        <nz-form-label nzFor="To Date" style="background-color: white;">To Date</nz-form-label>
+                        <nz-form-control>
+                            <nz-date-picker formControlName="toDate" nzPlaceHolder="To Date" [nzFormat]="dateFormat" id="To Date" style="width: 100%;"></nz-date-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div style="flex: 1;">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="This input is required">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Payment" formControlName="payment" style="width: 100%;">
+                                <nz-option *ngFor="let payment of listOfPayment" nzLabel="{{payment}}" nzValue="{{payment}}"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="filterBtn" nz-button nzType="primary" (click)="bookACar(postCarForm.value)">Book Car</button>
+            </div>
+        </form>
+    </nz-spin>
+</div>
+
+
+<!-- <div class="date-selector">
+    <form [formGroup]="postCarForm">
+    <label>
+      <span>Start Date:</span>
+      <span class="date-wrapper">
+        <input type="date" formControlName="fromDate">
+      </span>
+    </label>
+      <label>
+      <span>End Date:</span>
+      <span class="date-wrapper">
+        <input type="date" formControlName="toDate">
+      </span>
+    </label>
+</form>
+  </div> -->
+  

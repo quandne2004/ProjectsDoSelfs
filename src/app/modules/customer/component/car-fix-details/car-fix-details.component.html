@@ -1,0 +1,30 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working....">
+    <nz-table #basicTable [nzData]="carFix" [nzPageSize]="20" [nzShowPagination]="'false'">
+        <thead>
+            <tr>
+            <th style="font-weight: bolder; color: #003973;">carName</th>
+            <th style="font-weight: bolder; color: #003973;">description</th>
+            <th style="font-weight: bolder; color: #003973;">Status</th>
+            <th style="font-weight: bolder; color: #003973;">Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let carFixs of basicTable.data">
+                <td>{{carFixs.carName}}</td>
+                <td>{{carFixs.description}}</td>
+                <td>
+                    <strong [ngStyle]="{'color': (carFixs.carFixStatus === 'APPROVED' ? 'green' : carFixs.carFixStatus === 'REJECTED' ? 'blue' : '')}">
+                        {{carFixs.carFixStatus}}
+                    </strong>
+                    
+                </td>
+                <td *ngIf="carFixs.carFixStatus == 'HASFIXED'">
+                    <button nz-button routerLink="/customer/payment/{{carFixs.id}}">Show Payment</button>
+                </td>
+                <td *ngIf="carFixs.carFixStatus == 'FIXED'">
+                    <p style="color: red;">Wait For Payment</p>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-spin>

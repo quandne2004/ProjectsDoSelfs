@@ -1,0 +1,43 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working....">
+    <nz-table #basicTable [nzData]="carFix" [nzPageSize]="20" [nzShowPagination]="'false'">
+        <thead>
+            <tr>
+                <th style="font-weight: bolder; color: #003973;">Image</th>
+            <th style="font-weight: bolder; color: #003973;">Car Name</th>
+            <th style="font-weight: bolder; color: #003973;">Description</th>
+            <th style="font-weight: bolder; color: #003973;">Status</th>
+            <th style="font-weight: bolder; color: #003973;">Action</th>
+            <th style="font-weight: bolder; color: #003973;">description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let carFixs of basicTable.data">
+                <td>
+                    <img class="profile" style="height: 200px; width: 200px; border-radius: 10px;" [src]="carFixs.processedImg" alt="profile">
+                </td>
+                <td>{{carFixs.carName}}</td>
+                <td>{{carFixs.description}}</td>
+                <td>
+                    <strong [ngStyle]="{'color': (carFixs.carFixStatus === 'HASFIXED' ? 'green' : carFixs.carFixStatus === 'FIXED' ? 'blue' : '')}">
+                        {{carFixs.carFixStatus}}
+                    </strong>
+                    
+                </td>
+                <td>
+                    <span >
+                        <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
+                        (click)="changeCarFixStatus(carFixs.id,'FIXED')" >FIXED</button>
+  
+
+                        <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
+                        (click)="changeCarFixStatus(carFixs.id,'HASFIXED')" nzDanger>HASFIXED</button>
+                    </span>
+                </td>
+                <td>
+                    <button nz-button routerLink="/admin/show-payment/{{carFixs.id}}">Show Payment</button>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-spin>

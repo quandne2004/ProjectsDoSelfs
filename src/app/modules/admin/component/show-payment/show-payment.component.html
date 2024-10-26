@@ -1,0 +1,16 @@
+<section class="card-container" *ngIf="carFixs">
+    <div class="card-main">
+        <div class="card-img">
+            <img [src]="carFixs.processedImg" alt="">
+        </div>
+        <div class="card-content">
+            <h3 class="card-title">{{carFixs.carName}}</h3>
+            <p class="card-description">
+                {{carFixs.description}}
+            </p>
+            <div class="card-date">
+                <p class="date">User Post:{{carFixs.username}}</p>
+            </div>
+        </div>
+    </div>
+</section>
