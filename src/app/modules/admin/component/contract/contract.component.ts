@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-contract',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContractComponent implements OnInit {
 
-  constructor() { }
+
+  contracts:any[]=[];
+  constructor(private sv:AdminService) { }
 
   ngOnInit(): void {
+    this.getAllContract();
   }
 
+  getAllContract(){
+    this.sv.getAllContract().subscribe((res)=>{
+      this.contracts = res;
+    })
+  }
 }
