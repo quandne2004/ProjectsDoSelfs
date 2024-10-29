@@ -9,7 +9,7 @@ import { AdminService } from '../../services/admin.service';
 export class ContractComponent implements OnInit {
 
 
-  contracts:any[]=[];
+  contracts:any;
   constructor(private sv:AdminService) { }
 
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class ContractComponent implements OnInit {
   getAllContract(){
     this.sv.getAllContract().subscribe((res)=>{
       this.contracts = res;
+      console.log(res);
     })
   }
 }

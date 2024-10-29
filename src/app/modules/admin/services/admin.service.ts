@@ -83,6 +83,14 @@ getAllContract():Observable<any>{
   return this.http.get(BASIC_URL + "/api/admin/contract/list",{headers:this.createAuthorizationHeader()});
 }
 
+postRentalContract(rentalContractDto:any):Observable<any>{
+  return this.http.post(BASIC_URL + '/api/admin/rental',rentalContractDto,{headers:this.createAuthorizationHeader()});
+}
+
+getAllRentalContract():Observable<any>{
+  return this.http.get(BASIC_URL + '/api/admin/rental',{headers:this.createAuthorizationHeader()});
+}
+
   createAuthorizationHeader():HttpHeaders{
     let authHeaders : HttpHeaders = new HttpHeaders();
     return authHeaders.set(

@@ -11,9 +11,13 @@ import { CarFixComponent } from './component/car-fix/car-fix.component';
 import { ShowPaymentComponent } from './component/show-payment/show-payment.component';
 import { ContractComponent } from './component/contract/contract.component';
 import { PostContractComponent } from './component/post-contract/post-contract.component';
+import { PostRentalContractComponent } from './component/post-rental-contract/post-rental-contract.component';
+import { RentalContractComponent } from './component/rental-contract/rental-contract.component';
 
 const routes: Routes = [
   {path:"dashboard",component:AdminDashboardComponent},
+  {path:'post-retalContract',component:PostRentalContractComponent},
+  {path:'rental-contract',component:RentalContractComponent},
   {path:'contract',component:ContractComponent},
   {path:'post-contract/:carId',component:PostContractComponent},
   {path:"car",component:PostCarComponent},
