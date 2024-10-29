@@ -18,7 +18,6 @@ export class PostRentalContractComponent implements OnInit {
   ngOnInit(): void {
     this.postForm = this.fb.group({
       bookACarId:[null,[Validators.required]],
-      paymentMethod:[null,[Validators.required]],
       maintenanceTerms:[null,[Validators.required]],
       usageTerms:[null,[Validators.required]],
       terminationTerms:[null,[Validators.required]]
