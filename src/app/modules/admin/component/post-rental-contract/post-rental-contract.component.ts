@@ -17,15 +17,6 @@ export class PostRentalContractComponent implements OnInit {
 
   ngOnInit(): void {
     this.postForm = this.fb.group({
-      customerName:[null,[Validators.required]],
-      customerIdNumber:[null,[Validators.required]],
-      customerEmail:[null,[Validators.required]],
-      carId:[null,[Validators.required]],
-      carName:[null,[Validators.required]],
-      carBrand:[null,[Validators.required]],
-      carModel:[null,[Validators.required]],
-      yearOfManufacture:[null,[Validators.required]],
-      carColor:[null,[Validators.required]],
       bookACarId:[null,[Validators.required]],
       paymentMethod:[null,[Validators.required]],
       maintenanceTerms:[null,[Validators.required]],
