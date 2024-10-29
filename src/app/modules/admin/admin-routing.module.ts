@@ -17,7 +17,7 @@ import { RentalContractComponent } from './component/rental-contract/rental-cont
 const routes: Routes = [
   {path:"dashboard",component:AdminDashboardComponent},
   {path:'post-retalContract',component:PostRentalContractComponent},
-  {path:'rental-contract',component:RentalContractComponent},
+  {path:'rental-contract/:rentalContractId',component:RentalContractComponent},
   {path:'contract',component:ContractComponent},
   {path:'post-contract/:carId',component:PostContractComponent},
   {path:"car",component:PostCarComponent},
