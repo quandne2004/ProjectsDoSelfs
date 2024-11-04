@@ -38,6 +38,14 @@
                             </nz-select>
                         </nz-form-control>
                     </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-label nzFor="studentClass">numberSeat</nz-form-label>
+                        <nz-form-control nzErrorTip="This Input is Required!">
+                            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a numberSeat" formControlName="numberSeat">
+                                <nz-option *ngFor="let item of listOfNumberSeat" nzLabel="{{item}}" nzValue="{{item}}"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
                 </div>
                 <div class="filter-select-dropdown filter-fields-width">
                     <button class="filterBtn" nz-button nzType="primary" (click)="searchCar()">Search Car</button>

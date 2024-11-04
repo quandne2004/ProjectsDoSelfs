@@ -22,7 +22,7 @@ listOfNumberSeat: number[] = [2, 4, 5, 6, 7];
       type:[null],
       transmission:[null],
       color:[null],
-      numberSeat:[null]
+      numberSeat:[null],
     })
    }
 

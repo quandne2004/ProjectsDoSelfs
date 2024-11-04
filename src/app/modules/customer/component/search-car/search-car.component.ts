@@ -17,12 +17,15 @@ export class SearchCarComponent implements OnInit {
 listOfType =["Petrol","Hybrid","Diesel","Electric","CNG"];
 listOfColor=["Red","White","Blue","Black","Orange","Grey","Silver"];
 listOfTranmission= ["Manual","Automatic"];
+listOfNumberSeat: number[] = [2, 4, 5, 6, 7];
+
   constructor(private fb:FormBuilder,private sv:CustomerService) {
     this.searchCarForm = this.fb.group({
       brand:[null],
       type:[null],
       transmission:[null],
-      color:[null]
+      color:[null],
+      numberSeat:[null]
     })
    }
 
